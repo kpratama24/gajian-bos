@@ -1,6 +1,6 @@
 <?php
-
-    if(isset($_GET['encryption']) && $_GET['encryption']=="ytlqfjg3syztvp6c3cey"){
+session_start();
+    if(isset($_SESSION['username'])){
         ?>
         <!doctype html>
         <html lang="en">

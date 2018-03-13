@@ -9,7 +9,7 @@ if(isset($_SESSION['username'])){
 ?>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>BKA - Gaji</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@ if(isset($_SESSION['username'])){
       <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Sistem Pelaporan Gaji Magang</h1>
-            <p class="lead">Login Page</p>
+            <p class="lead"><b>Login Page</b></p>
             <hr class="my-4">
             <form action="./login.php" method="POST">
                 <div class="form-group">
@@ -34,6 +34,9 @@ if(isset($_SESSION['username'])){
                   <label for="exampleInputPassword1">Password</label>
                   <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
+                <?php if(isset($_GET['admin'])){ ?>
+                  <input type="password" name="secretCode" placeholder="secretCode">
+                  <?php } ?>
                 <button type="submit" class="btn btn-primary">Login</button>
               </form>
           </div>

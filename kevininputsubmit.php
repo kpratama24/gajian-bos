@@ -10,7 +10,7 @@
      '" . $_POST['pulang'] . "', '" . $_POST['totaljam'] . "', '" . $_POST['istirahat'] . "', '" .  $waktureal . "',
       '" . $totalbayar . "')";
       $conn->query($sql);
-      header( "Refresh:2; url=./kevininput.php?encryption=ytlqfjg3syztvp6c3cey");    
+      header( "Refresh:2; url=./kevininput.php");    
       echo "MANTAP BRO GAJIAN LAGI !";                  
   }
   else{

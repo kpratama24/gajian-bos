@@ -15,7 +15,8 @@ if(isset($_POST['username'])){
         $passwordhash = password_hash($password, PASSWORD_BCRYPT);
         $sqlRegister = 'INSERT INTO `user` (`id`, `username`, `password`) VALUES (NULL , "' . $username .'", "' . $passwordhash .'" )';
         $conn->query($sqlRegister);
-        echo "successfully registered";
+        echo "successfully registered. Wait!";
+        header( "Refresh:2; url=./"); 
     }
     else{    
         $result = $conn->query($sql);

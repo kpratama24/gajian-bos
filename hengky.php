@@ -23,8 +23,9 @@
           <div class="container">
         <div class="jumbotron">
             <a href="./home.php"><button class="btn btn-primary no-print"> < go back </button></a>
-            <p class="lead">PERHITUNGAN JAM KERJA KARYAWAN MAGANG</p>
-            <p class="lead">Biro Kemahasiswaan dan Alumni </p>
+            <b><p class="no-print">Dicek dulu yaaa. Kalau sudah klik kanan terus pilih print !</p></b>
+            <p class="display-4">PERHITUNGAN JAM KERJA KARYAWAN MAGANG</p>
+            <p class="lead"><b>Biro Kemahasiswaan dan Alumni </b></p>
             <hr class="my-4">
             <h5>Nama : Hengky Surya</h5>
             <h5>NIK : 20180014</h5>
@@ -53,10 +54,10 @@
                             <td>" . $row['tanggal'] . "</td>
                             <td>" . $row['masuk'] . "</td>
                             <td>" . $row['pulang'] . "</td>
-                            <td>" . $row['totaljam'] . "</td>
-                            <td>" . $row['istirahat'] . "</td>
-                            <td>" . $row['waktureal'] . "</td>
-                            <td>" . $row['totalbayar'] . "</td>
+                            <td>" . $row['totaljam'] . " jam</td>
+                            <td>" . $row['istirahat'] . " jam</td>
+                            <td>" . $row['waktureal'] . " jam</td>
+                            <td>Rp. " . $row['totalbayar'] . "</td>
                             ";
                             $totaljam  = $totaljam + intval($row['waktureal']);
                             $totalbayar = $totalbayar + intval($row['totalbayar']);
@@ -82,7 +83,7 @@
             <p><b>Matheus Setiyanto, S.Sos</b></p>
           </div>
           <div class="card-footer text-muted">
-            &copy; 2018 Biro Kemahasiswaan dan Alumni . Universitas Katolik Parahyangan
+            &copy; 2018 IT Biro Kemahasiswaan dan Alumni . Universitas Katolik Parahyangan
           </div>
       </div>
             <!-- Optional JavaScript -->

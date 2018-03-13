@@ -4,7 +4,7 @@
     session_start();
 
     if(isset($_SESSION['username'])){
-        $name = explode("@",$_SESSION['username'],2)
+        $name = explode("@",$_SESSION['username'],2);
     ?>
     <!doctype html>
     <html lang="en">
@@ -21,14 +21,22 @@
       <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Sistem Pelaporan Gaji Magang</h1>
-            <p class="lead">Selamat datang <b><?php echo $name[0] ?></b></p>
+            <p class="lead">Selamat datang <b><?php echo $name[0] ?> !</b> <small><a href="./logout.php">Keluar</a></small></p>
             <hr class="my-4">
             <h4>Lihat Laporan Gaji</h4><br>
-            <a href="./kevin.php"><button class="btn btn-primary">Kevin</button></a>&nbsp; &nbsp;
-            <a href="./hengky.php"><button class="btn btn-primary">Hengky</button></a>            
+            <a href="./kevin.php"><button class="btn btn-danger">Kevin</button></a>&nbsp; &nbsp;
+            <a href="./hengky.php"><button class="btn btn-success">Hengky</button></a>&nbsp; &nbsp;
+            <?php
+            if($name[0] == "admin"){
+            ?>
+            <br><br>
+            <p class="lead"> INPUT COY </p>
+            <a href="./kevininput.php"><button class="btn btn-dark">Input Gaji Kevin</button></a>&nbsp; &nbsp;
+            <a href="./hengkyinput.php"><button class="btn btn-dark">Input Gaji Hengky</button></a>&nbsp; &nbsp;
+            <?php } ?>
           </div>
           <div class="card-footer text-muted">
-            &copy; 2018 Biro Kemahasiswaan dan Alumni . Universitas Katolik Parahyangan
+            &copy; 2018 IT Biro Kemahasiswaan dan Alumni . Universitas Katolik Parahyangan
           </div>
       </div>
         <!-- Optional JavaScript -->
