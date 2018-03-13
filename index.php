@@ -27,8 +27,8 @@ if(isset($_SESSION['username'])){
             <form action="./login.php" method="POST">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Username</label>
-                  <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+                  <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan email anda">
+                  <small id="emailHelp" class="form-text text-muted">Kami tidak akan pernah menyebarkannya ! </small>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
@@ -41,7 +41,7 @@ if(isset($_SESSION['username'])){
               </form>
           </div>
           <div class="card-footer text-muted">
-            &copy; 2018 Biro Kemahasiswaan dan Alumni . Universitas Katolik Parahyangan
+            &copy; 2018 IT Biro Kemahasiswaan dan Alumni . Universitas Katolik Parahyangan
           </div>
       </div>
     <!-- Optional JavaScript -->
