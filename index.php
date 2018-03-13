@@ -22,7 +22,7 @@ if(isset($_SESSION['username'])){
       <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Sistem Pelaporan Gaji Magang</h1>
-            <p class="lead"><b>Login Page</b></p>
+            <p class="lead"><b>Halaman login</b></p>
             <hr class="my-4">
             <form action="./login.php" method="POST">
                 <div class="form-group">
