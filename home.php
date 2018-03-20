@@ -21,18 +21,24 @@
       <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Sistem Pelaporan Gaji Magang</h1>
-            <p class="lead">Selamat datang <b><?php echo $name[0] ?> !</b> <small><a href="./logout.php">Keluar</a></small></p>
+            <p class="lead">Selamat datang <b><?php echo $name[0] ?> !</b> <small><a href="./logout.php"><button class="btn btn-outline-danger btn-sm">Keluar</button></a></small></p>
             <hr class="my-4">
-            <h4>Lihat Laporan Gaji</h4><br>
-            <a href="./kevin.php"><button class="btn btn-danger">Kevin</button></a>&nbsp; &nbsp;
-            <a href="./hengky.php"><button class="btn btn-success">Hengky</button></a>&nbsp; &nbsp;
+            <h4>Lihat Laporan Gaji</h4>
+    <?php if(isset($_GET['delete'])) { ?><p><span class="badge badge-warning">Ada perubahan perhitungan !</span></p><?php } ?>
+            <a href="./kevin.php"><button class="btn btn-outline-primary" <?php if($name[1]!="admin") echo "disabled"?>>Kevin</button></a>&nbsp; &nbsp;
+            <a href="./hengky.php"><button class="btn btn-outline-primary" <?php if($name[1]!="admin2") echo "disabled"?>>Hengky</button></a>&nbsp; &nbsp;
+            <a href="./nini.php"><button class="btn btn-outline-primary">Nini</button></a>&nbsp; &nbsp;
+            <a href="./nur.php"><button class="btn btn-outline-primary">Pinta</button></a>&nbsp; &nbsp;
+            
             <?php
-            if($name[0] == "admin"){
+            if($name[0] == "admin" || $name[1] == "bka"){
             ?>
-            <br><br>
-            <p class="lead"> INPUT COY </p>
-            <a href="./kevininput.php"><button class="btn btn-dark">Input Gaji Kevin</button></a>&nbsp; &nbsp;
-            <a href="./hengkyinput.php"><button class="btn btn-dark">Input Gaji Hengky</button></a>&nbsp; &nbsp;
+            <hr class="my-4">            
+            <p class="lead"> Input Gaji </p>
+            <a href="./kevininput.php"><button class="btn btn-outline-dark" <?php if($name[1]!="admin") echo "disabled"?>>Input Gaji Kevin</button></a>&nbsp; &nbsp;
+            <a href="./hengkyinput.php"><button class="btn btn-outline-dark" <?php if($name[1]!="admin2") echo "disabled"?>>Input Gaji Hengky</button></a>&nbsp; &nbsp;
+            <a href="./niniinput.php"><button class="btn btn-outline-dark" <?php if($name[1]!="bka") echo "disabled"?>>Input Gaji Nini</button></a>&nbsp; &nbsp;            
+            <a href="./nurinput.php"><button class="btn btn-outline-dark" <?php if($name[1]!="bka") echo "disabled"?>>Input Gaji Pinta</button></a>&nbsp; &nbsp;            
             <?php } ?>
           </div>
           <div class="card-footer text-muted">

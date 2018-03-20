@@ -1,7 +1,6 @@
 <?php
 session_start();
     if(isset($_SESSION['username'])){
-        $name = explode("@",$_SESSION['username'],2);
         ?>
         <!doctype html>
         <html lang="en">
@@ -17,17 +16,16 @@ session_start();
           <body>
           <a href="./home.php">< Go back </a>
           <div class="container">
-            <h2>Input <small><b>(logged in as <?php echo $name[1]; ?>)</b></small></h2>
-              <form action="./kevininputsubmit.php" method="post">
-                Hari : <input class="form-control" type="text" name="hari" placeholder="hari" required><br>
+              <form action="./nurinputsubmit.php" method="post">
+              Hari : <input class="form-control" type="text" name="hari" placeholder="hari" required><br>
                 Tanggal: <input class="form-control" type="date" name="tanggal" required><br>
                 Masuk: <input class="form-control" type="time" name="masuk" required><br>
                 Pulang :<input class="form-control" type="time" name="pulang" required><br>
                 Total Jam :<input class="form-control" type="number" name="totaljam" placeholder="total jam" required><br>
                 Istirahat : <input class="form-control" type="number" name="istirahat" placeholder="total istirahat" required><br>
-                <input class="btn btn-primary" type="submit" value="Submit" required>
+                <input type="submit" value="Submit" required>
             </form>
-        </div>
+            </div>
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

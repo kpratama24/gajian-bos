@@ -4,13 +4,13 @@
     $totaljam = 0;
     $totalbayar = 0;
  if(isset($_SESSION['username'])){
-     $sql = "SELECT * FROM magang where id=2 ORDER BY tanggal ASC";
+     $sql = "SELECT * FROM magang where id=3 ORDER BY tanggal ASC";
      $result = $conn->query($sql);
      ?>
         <!doctype html>
         <html lang="en">
           <head>
-            <title>Perhitungan Hengky</title>
+            <title>Perhitungan Nini</title>
             <!-- Required meta tags -->
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,9 +28,9 @@
             <h4>PERHITUNGAN JAM KERJA KARYAWAN MAGANG</h4>
             <p class="lead"><b>Biro Kemahasiswaan dan Alumni </b></p>
             <hr class="my-4">
-            <h5>Nama : Hengky Surya</h5>
-            <h5>NIK : 20180014</h5>
-            <h5>Periode : 16 Februari s/d 15 Maret 2018</h5><br>
+            <h5>Nama : Nini Marniasti Hia</h5>
+            <h5>NIK : 20170122</h5>
+            <h5>Periode : 21 Januari s/d 15 Februari 2018</h5><br>
             <table class="table">
                 <thead>
                     <tr>
@@ -43,7 +43,7 @@
                     <th scope="col">Istirahat</th>
                     <th scope="col">Waktu Real</th>
                     <th scope="col">Total Rupiah</th>
-                    <th scope="col" class="no-print">Aksi</th>                                       
+                    <th scope="col" class="no-print">Aksi</th>                    
                     </tr>
                 </thead>
                 <tbody>
@@ -60,7 +60,7 @@
                             <td>" . $row['istirahat'] . " jam</td>
                             <td>" . $row['waktureal'] . " jam</td>
                             <td>Rp. " . $row['totalbayar'] . "</td>
-                            <td class=\"no-print\"><a href=\"./editinputsubmit.php?delete&uniquebro=" . $row['uniquebro'] . "\" onclick=\"return confirm('Yakin ?')\"><i class=\"fa fa-trash\"></i>&nbsp;Hapus</a></td>";                                                                                   
+                            <td class=\"no-print\"><a href=\"./editinputsubmit.php?delete&uniquebro=" . $row['uniquebro'] . "\" onclick=\"return confirm('Yakin ?')\"><i class=\"fa fa-trash\"></i>&nbsp;Hapus</a></td>";
                             $totaljam  = $totaljam + intval($row['waktureal']);
                             $totalbayar = $totalbayar + intval($row['totalbayar']);
                             $i++;
@@ -75,10 +75,10 @@
             <b><p class="no-print">Dicek dulu yaaa. Kalau sudah klik -> <button class="btn btn-outline-dark" onclick="printcoy()">Print</button></p></b>
             <br>
             <p class="lead">Jam kerja yang dihitung : <?php echo $totaljam ?> </p>
-            <p class="lead">TARIF GOLONGAN 1A : Rp.9.000,- / JAM</p>
+            <p class="lead">TARIF GOLONGAN 2 : Rp.7.000,- / JAM</p>
             <?php
             ?>
-            <p class="lead">Jumlah Gaji : 9000 * <?php echo $totaljam?> jam = Rp. <?php echo $totalbayar ?> </p>
+            <p class="lead">Jumlah Gaji : 7000 * <?php echo $totaljam?> jam = Rp. <?php echo $totalbayar ?> </p>
             <br><br>
             <p>Bandung, <?php echo(date("d-M-Y")); ?></p>
             <p>Mengetahui,</p>
@@ -107,4 +107,5 @@
  else{
      echo "Go away !";
  }
+
 ?>

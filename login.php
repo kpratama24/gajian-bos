@@ -29,12 +29,12 @@ if(isset($_POST['username'])){
             }
             else{
                 echo "Password incorrect!";
-                header( "Refresh:2; url=./");                
+                header( "refresh:0;url=./?passwordincorrect");                
             }
         }
         else{
             echo "<h1> Username did not exist </h1>";
-            header( "Refresh:2; url=./");
+            header( "Refresh:0; url=./?usernamenotexist");
         }
     }
 

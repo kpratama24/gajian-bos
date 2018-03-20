@@ -18,13 +18,14 @@
             <!-- Bootstrap CSS -->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             <link rel="stylesheet" href="./style.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
           </head>
           <body>
           <div class="container">
         <div class="jumbotron">
-            <a href="./home.php"><button class="btn btn-primary no-print"> < go back </button></a>
-            <b><p class="no-print">Dicek dulu yaaa. Kalau sudah klik kanan terus pilih print !</p></b>
-            <p class="display-4">PERHITUNGAN JAM KERJA KARYAWAN MAGANG</p>
+            <a href="./home.php"><button class="btn btn-outline-primary no-print"> < go back </button></a>
+            <b><p class="no-print">Dicek dulu yaaa. Kalau sudah klik -> <button class="btn btn-outline-dark" onclick="printcoy()">Print</button></p></b>
+            <h4>PERHITUNGAN JAM KERJA KARYAWAN MAGANG</h4>
             <p class="lead"><b>Biro Kemahasiswaan dan Alumni </b></p>
             <hr class="my-4">
             <h5>Nama : Kevin Pratama</h5>
@@ -41,7 +42,8 @@
                     <th scope="col">Total Jam</th>
                     <th scope="col">Istirahat</th>
                     <th scope="col">Waktu Real</th>
-                    <th scope="col">Total Rupiah</th>                    
+                    <th scope="col">Total Rupiah</th>
+                    <th scope="col" class="no-print">Aksi</th>                    
                     </tr>
                 </thead>
                 <tbody>
@@ -58,7 +60,7 @@
                             <td>" . $row['istirahat'] . " jam</td>
                             <td>" . $row['waktureal'] . " jam</td>
                             <td>Rp. " . $row['totalbayar'] . "</td>
-                            ";
+                            <td class=\"no-print\"><a href=\"./editinputsubmit.php?delete&uniquebro=" . $row['uniquebro'] . "\" onclick=\"return confirm('Yakin ?')\"><i class=\"fa fa-trash\"></i>&nbsp;Hapus</a></td>";
                             $totaljam  = $totaljam + intval($row['waktureal']);
                             $totalbayar = $totalbayar + intval($row['totalbayar']);
                             $i++;
@@ -70,6 +72,7 @@
                     ?>
                 </tbody>
             </table>
+            <b><p class="no-print">Dicek dulu yaaa. Kalau sudah klik -> <button class="btn btn-outline-dark" onclick="printcoy()">Print</button></p></b>
             <br>
             <p class="lead">Jam kerja yang dihitung : <?php echo $totaljam ?> </p>
             <p class="lead">TARIF GOLONGAN 1A : Rp.9.000,- / JAM</p>
@@ -93,9 +96,16 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
           </body>
         </html>
+        <script type="text/javascript">
+            
+            function printcoy() {
+                window.print();
+            }
+        </script>
      <?php
  }
  else{
      echo "Go away !";
  }
+
 ?>

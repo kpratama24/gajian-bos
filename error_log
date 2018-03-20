@@ -1,0 +1,66 @@
+[13-Mar-2018 14:36:20 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/nearkevi/public_html/gaji/db.php on line 9
+[13-Mar-2018 14:46:16 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/nearkevi/public_html/gaji/home.php on line 51
+[13-Mar-2018 14:46:19 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/nearkevi/public_html/gaji/home.php on line 51
+[13-Mar-2018 14:46:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/nearkevi/public_html/gaji/home.php on line 51
+[18-Mar-2018 08:14:24 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:15:12 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:15:13 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:16:07 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:16:09 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:16:10 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:16:16 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:16:17 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:16:17 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:16:18 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:16:18 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:16:19 UTC] PHP Parse error:  syntax error, unexpected 'session_start' (T_STRING) in /home/nearkevi/public_html/gaji/editinput.php on line 3
+[18-Mar-2018 08:21:22 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting ',' or ';' in /home/nearkevi/public_html/gaji/editinput.php on line 23
+[18-Mar-2018 08:21:23 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting ',' or ';' in /home/nearkevi/public_html/gaji/editinput.php on line 23
+[18-Mar-2018 08:53:05 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:53:44 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:54:36 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:55:13 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:55:16 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:55:16 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:55:17 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:55:17 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:04 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:06 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:07 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:07 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:08 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:24 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:24 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:25 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:25 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:25 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:26 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:26 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:26 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:37 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:37 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 08:57:38 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/nearkevi/public_html/gaji/editinputsubmit.php on line 5
+[18-Mar-2018 09:25:22 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/nearkevi/public_html/gaji/hengky.php on line 65
+[18-Mar-2018 09:25:23 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/nearkevi/public_html/gaji/hengky.php on line 65
+[18-Mar-2018 09:25:35 UTC] PHP Parse error:  syntax error, unexpected '"', expecting ',' or ';' in /home/nearkevi/public_html/gaji/hengky.php on line 64
+[18-Mar-2018 09:25:36 UTC] PHP Parse error:  syntax error, unexpected '"', expecting ',' or ';' in /home/nearkevi/public_html/gaji/hengky.php on line 64
+[18-Mar-2018 09:26:00 UTC] PHP Parse error:  syntax error, unexpected '"', expecting ',' or ';' in /home/nearkevi/public_html/gaji/hengky.php on line 64
+[18-Mar-2018 09:26:22 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/nearkevi/public_html/gaji/hengky.php on line 65
+[18-Mar-2018 09:35:37 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting ',' or ';' in /home/nearkevi/public_html/gaji/kevin.php on line 63
+[18-Mar-2018 09:35:37 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting ',' or ';' in /home/nearkevi/public_html/gaji/kevin.php on line 63
+[18-Mar-2018 09:42:39 UTC] PHP Parse error:  syntax error, unexpected 'alert' (T_STRING), expecting ',' or ';' in /home/nearkevi/public_html/gaji/home.php on line 36
+[18-Mar-2018 09:42:41 UTC] PHP Parse error:  syntax error, unexpected 'alert' (T_STRING), expecting ',' or ';' in /home/nearkevi/public_html/gaji/home.php on line 36
+[18-Mar-2018 09:54:20 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:54:24 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:55:33 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:55:34 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:55:34 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:55:57 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:55:58 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:55:58 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:55:59 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:55:59 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:55:59 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 09:56:00 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/nearkevi/public_html/gaji/index.php on line 26
+[18-Mar-2018 10:05:44 UTC] PHP Notice:  Undefined index: secret in /home/nearkevi/public_html/gaji/login.php on line 27
+[18-Mar-2018 10:05:58 UTC] PHP Notice:  Undefined index: secret in /home/nearkevi/public_html/gaji/login.php on line 27

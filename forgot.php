@@ -17,17 +17,14 @@ if(isset($_SESSION['username'])){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
   <body>
       <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Sistem Pelaporan Gaji Magang</h1>
-            <p class="lead"><b>Halaman login</b></p>
- <?php if(isset($_GET['passwordincorrect'])) { ?><p class="alert alert-danger">Password salah !</p> <?php } ?>
- <?php if(isset($_GET['usernamenotexist'])) { ?><p class="alert alert-warning">Username tidak tersedia !</p> <?php } ?> 
+            <p class="lead"><b>Coming soon !</b></p>
             <hr class="my-4">
-            <form action="./login.php" method="POST">
+           <!--  <form action="./login.php" method="POST">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Username</label>
                   <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan email anda">
@@ -37,13 +34,9 @@ if(isset($_SESSION['username'])){
                   <label for="exampleInputPassword1">Password</label>
                   <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-                <?php if(isset($_GET['admin'])){ ?>
-                  <input type="password" name="secretCode" placeholder="secretCode">
-                  <?php } ?>
-                  <div class="g-recaptcha" data-sitekey="6LdWVE0UAAAAAJePbvAQf4KBmE7zZ6jLf3LEzPh2"></div><br>
                 <button type="submit" class="btn btn-primary">Login</button><br>
                 <a href="./forgot.php">Lupa Password ? </a>
-              </form>
+              </form> -->
           </div>
           <div class="card-footer text-muted">
             &copy; 2018 IT Biro Kemahasiswaan dan Alumni . Universitas Katolik Parahyangan
