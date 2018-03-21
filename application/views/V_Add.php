@@ -15,33 +15,27 @@
             <h1 class="display-4">Sistem Pelaporan Gaji Magang</h1>
             <p class="lead">You're logged in as : <b><?php echo $this->session->userdata('username');?></b> <small><a href="<?php echo base_url();?>logout"><button class="btn btn-outline-danger btn-sm">Keluar</button></a></small></p>
             <hr class="my-4">
-            <h4>Profile Data Diri</h4>
-            <p><b>Username :</b> <?php echo $this->session->userdata('username'); ?></p>
-            <?php foreach ($profile as $prof):?>
-              <p><b>Nama : </b><?php echo $prof->NAMA; ?></p>
-              <p><b>NIK : </b><?php echo $prof->NIK; ?></p>
-            <?php endforeach;?>
-            <hr class="my-4"> 
             <?php
-            if($this->session->userdata('id')==1){
-                ?>
-                 <h4>Tambah Tenaga Magang</h4>
-                 <a href="<?php echo base_url();?>add"><button class="btn btn-outline-primary">ADD</button></a>&nbsp; &nbsp;
-                 <hr class="my-4">
-                <h4>Daftar Tenaga Magang</h4>
-                 <a href="<?php echo base_url();?>list"><button class="btn btn-outline-primary">Lihat Daftar Tenaga Magang</button></a>&nbsp; &nbsp;
-                 <hr class="my-4">
-                <?php  
+            if($this->session->flashdata('error_add')){
+                echo $this->session->flashdata('error_add');
             }
             ?>
-            <h4>Lihat Laporan Gaji</h4>
-   
-            <a href="<?php echo base_url();?>laporan"><button class="btn btn-outline-primary">Lihat Laporan Tenaga Magang</button></a>&nbsp; &nbsp;
-            <a href="<?php echo base_url();?>laporan"><button class="btn btn-outline-primary">Lihat Laporan Anda</button></a>&nbsp; &nbsp;
-            
-            <hr class="my-4">            
-            <p class="lead"> Input Gaji </p>
-            <a href="<?php echo base_url();?>input"><button class="btn btn-outline-dark">Input Gaji Anda</button></a>&nbsp; &nbsp;     
+            <a href="http://localhost/magang/home"><button class="btn btn-outline-primary no-print"> < go back </button></a>
+            <form method="post" action="<?php echo base_url();?>add_new">
+              Username : <br>
+              <input type="text" name="username" required>
+              <br>
+              Password : <br>
+              <input type="password" name="password" required>
+              <br>
+              Nama : <br>
+              <input type="text" name="nama" required>
+              <br>
+              NIK : <br>
+              <input type="text" name="nik" required>
+              <br>
+              <input type="submit" name="">
+            </form>  
           
           </div>
           <div class="card-footer text-muted">

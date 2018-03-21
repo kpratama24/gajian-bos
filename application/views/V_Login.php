@@ -17,7 +17,7 @@
             <h1 class="display-4">Sistem Pelaporan Gaji Magang</h1>
             <p class="lead"><b>Halaman login</b></p>
             <hr class="my-4">
-            <form action="http://localhost/magang/C_Login/login" method="POST">
+            <form action="<?php echo base_url();?>login" method="POST">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Username</label>
                   <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan email anda">
@@ -30,6 +30,11 @@
                 <button type="submit" class="btn btn-primary">Login</button><br>
                 <a href="./forgot.php">Lupa Password ? </a>
               </form>
+              <?php
+                if($this->session->flashdata('error_login')){
+                    echo $this->session->flashdata('error_login');
+                }
+              ?>
           </div>
           <div class="card-footer text-muted">
             &copy; 2018 IT Biro Kemahasiswaan dan Alumni . Universitas Katolik Parahyangan
