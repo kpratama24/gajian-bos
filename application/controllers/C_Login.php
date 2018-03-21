@@ -7,12 +7,14 @@ class C_Login extends CI_Controller{
 		$this->load->model('user');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$validated = $this->user->validateLogin($username, $password);
-		if($validated){
+		$validated = $this->user->validateLogin($username);
+
+		if(password_verify($password, $validated)){
+			$role = $this->user->getUserItem($username, "ID_ROLE");
 			$userdata = array(
-				'id' => $validated,
         		'username'  => $username,
-        		'logged_in' => TRUE
+        		'logged_in' => TRUE,
+        		'role' => $role
 			);
 
 			$this->session->set_userdata($userdata);

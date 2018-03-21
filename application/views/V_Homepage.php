@@ -23,7 +23,7 @@
             <?php endforeach;?>
             <hr class="my-4"> 
             <?php
-            if($this->session->userdata('id')==1){
+            if($this->session->userdata('role')==1){
                 ?>
                  <h4>Tambah Tenaga Magang</h4>
                  <a href="<?php echo base_url();?>add"><button class="btn btn-outline-primary">ADD</button></a>&nbsp; &nbsp;

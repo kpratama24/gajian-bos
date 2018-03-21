@@ -58,5 +58,6 @@ $route['add_new'] = 'C_Add/addUser';
 $route['logout'] = 'C_Login/logout';
 $route['home'] = 'C_Homepage/index';
 $route['input'] = 'C_Input/index';
+$route['gajian'] = 'C_Input/inputGaji';
 $route['laporan'] = 'C_DaftarGaji/index';
 $route['translate_uri_dashes'] = FALSE;

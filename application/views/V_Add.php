@@ -23,18 +23,33 @@
             <a href="http://localhost/magang/home"><button class="btn btn-outline-primary no-print"> < go back </button></a>
             <form method="post" action="<?php echo base_url();?>add_new">
               Username : <br>
-              <input type="text" name="username" required>
+              <input class="form-control" type="text" name="username" required>
               <br>
               Password : <br>
-              <input type="password" name="password" required>
+              <input class="form-control" type="password" name="password" required>
               <br>
               Nama : <br>
-              <input type="text" name="nama" required>
+              <input class="form-control" type="text" name="nama" required>
               <br>
               NIK : <br>
-              <input type="text" name="nik" required>
+              <input class="form-control" type="text" name="nik" required>
               <br>
-              <input type="submit" name="">
+              ROLE : <br>
+              <select class="form-control" name="role">
+                  <?php foreach ($listrole as $list):?>
+                    <option value="<?php echo $list->ID;?>"><?php echo $list->NAME; ?></option>
+                  <?php endforeach;?>
+              </select>
+              <br>
+              Kategori :
+              <br>
+              <select class="form-control" name="kategori">
+                  <?php foreach ($listkategori as $list):?>
+                    <option value="<?php echo $list->ID;?>"><?php echo $list->KATEGORI; ?></option>
+                  <?php endforeach;?>
+              </select>
+              <br>
+              <input class="btn btn-outline-primary" type="submit" name="" value="TAMBAHKAN TENAGA MAGANG">
             </form>  
           
           </div>

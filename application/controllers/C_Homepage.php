@@ -2,9 +2,9 @@
 class C_Homepage extends CI_Controller{
 	function index(){
 		if($this->session->userdata('logged_in')){
-			$id = $this->session->userdata('id');
+			$username = $this->session->userdata('username');
 			$this->load->model('user');
-			$data['profile'] = $this->user->getDetailUser($id)->result();
+			$data['profile'] = $this->user->getDetailUser($username)->result();
 			$this->load->view('V_Homepage', $data);
 		}
 		else{
