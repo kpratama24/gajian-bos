@@ -19,9 +19,51 @@
             <h4>PERHITUNGAN JAM KERJA KARYAWAN MAGANG</h4>
             <p class="lead"><b>Biro Kemahasiswaan dan Alumni </b></p>
             <hr class="my-4">
-            <h5>Nama : Kevin Pratama</h5>
-            <h5>NIK : 20170122</h5>
-            <h5>Periode : 16 Februari s/d 15 Maret 2018</h5><br>
+            <form method="get">
+                <h4>FILTER</h4>
+                Tahun :
+                <select name="year" class="form-control">
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                </select>
+                Periode : 
+                <select name="periode" class="form-control">
+                    <option>Januari - Februari</option>
+                    <option>Februari - Maret</option>
+                    <option>Maret - April</option>
+                    <option>April - Mei</option>
+                    <option>Mei - Juni</option>
+                    <option>Juni - Juli</option>
+                    <option>Juli - Agustus</option>
+                    <option>Agustus - September</option>
+                    <option>September - Oktober</option>
+                    <option>Oktober - November</option>
+                    <option>November - Desember</option>
+                    <option>Desember - Januari</option>
+                </select>
+                <?php
+                if($this->session->userdata('role')== 1){
+                    ?>
+                    Karyawan Magang : 
+                    <select name="magang" class="form-control">
+                        <option value="0">ALL</option>
+                        <?php foreach ($listmagang as $list):?>
+                            <option value="<?php echo $list->USERNAME; ?>"><?php echo $list->NAMA;?></option>
+                        <?php endforeach;?>  
+                    </select>
+                    <?php
+                }    
+                ?>
+                <br>
+                <input class="btn btn-primary" type="submit" name="" value="SEARCH">
+            </form>
+            <hr class="my-4">
+            <?php foreach ($profile as $prof):?>
+              <h5><b>Nama : </b><?php echo $prof->NAMA; ?></h5>
+              <h5><b>NIK : </b><?php echo $prof->NIK; ?></h5>
+              <h5><b>Periode : </b></h3>
+            <?php endforeach;?>
             <table class="table">
                 <thead>
                     <tr>
@@ -38,16 +80,39 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <?php
+                        $iterator = 1;
+                        $totalWaktu = 0;
+                    ?>
+                    <?php foreach ($listlaporan as $list):?>
+                    <tr>
+                        <td><?php echo $iterator;?></td>
+                        <td><?php echo $list->HARI;?></td>
+                        <td><?php echo $list->TANGGAL;?></td>
+                        <td><?php echo $list->JAM_MASUK;?></td>
+                        <td><?php echo $list->JAM_PULANG;?></td>
+                        <td><?php echo $list->TOTAL_JAM;?></td>
+                        <td><?php echo $list->ISTIRAHAT;?></td>
+                        <td><?php echo $list->WAKTU_REAL;?></td>
+                        <td><?php echo $list->TOTAL_BAYAR;?></td>
+                    </tr>
+                    <?php 
+                    $totalWaktu+=$list->WAKTU_REAL;
+                    $iterator++;
+                    endforeach;?>
                 </tbody>
             </table>
             <b><p class="no-print">Dicek dulu yaaa. Kalau sudah klik -> <button class="btn btn-outline-dark" onclick="printcoy()">Print</button></p></b>
             <br>
             <p class="lead">Jam kerja yang dihitung :  </p>
-            <p class="lead">TARIF GOLONGAN 1A : Rp.9.000,- / JAM</p>
             <?php
+                foreach ($gaji as $gj):
+                    ?>
+                    <p class="lead">TARIF GOLONGAN <?php echo $gj->KATEGORI;?> : Rp.<?php $harga=$gj->HARGA;  echo $harga;?>,- / JAM</p>
+                    <?php
+                endforeach;
             ?>
-            <p class="lead">Jumlah Gaji : 9000 *  </p>
+            <p class="lead">Jumlah Gaji : <?php echo $harga;?> * <?php echo $totalWaktu;?> JAM = Rp. <?php echo $harga * $totalWaktu;?> </p>
             <br><br>
             <p>Bandung, <?php echo(date("d-M-Y")); ?></p>
             <p>Mengetahui,</p>

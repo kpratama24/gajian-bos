@@ -10,7 +10,7 @@ class C_Input extends CI_Controller{
 	}
 	function inputGaji(){
 		if($this->session->userdata('logged_in')){
-			$id = $this->session->userdata('id');
+			$id = $this->session->userdata('username');
 			$hari = $this->input->post('hari');
 			$tanggal = $this->input->post('tanggal');
 			$jamMasuk = $this->input->post('jam_masuk');
@@ -18,7 +18,13 @@ class C_Input extends CI_Controller{
 			$totalJam = $this->input->post('total_jam');
 			$istirahat = $this->input->post('istirahat');
 			$waktuReal = $totalJam - $istirahat;
-			$totalBayar = $waktuReal * 9000;
+			if($this->session->userdata('kategori') == 1){
+				$harga = 9000;
+			}
+			else if($this->session->userdata('kategori') == 2){
+				$harga = 7000;
+			}
+			$totalBayar = $waktuReal * $harga;
 			
 			$this->load->model('daftarLaporan');
 			$succed = $this->daftarLaporan->simpanGaji($id, $hari, $tanggal, $jamMasuk, $jamKeluar, $totalJam, $istirahat, $waktuReal, $totalBayar);

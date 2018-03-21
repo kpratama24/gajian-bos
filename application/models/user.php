@@ -48,9 +48,10 @@ class User extends CI_Model{
 		}
 	}
 	function getUser(){
-		$this->db->select('NAMA, NIK');
+		$this->db->select('NAMA, NIK, USERNAME');
 		$result = $this->db->get('user');
 		return $result;
 	}
+	
 }
 ?>

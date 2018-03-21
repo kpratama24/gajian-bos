@@ -20,6 +20,12 @@ class daftarLaporan extends CI_Model{
 			return false;
 		}
 	}
+	function getDaftarLaporan($username){
+		$this->db->select('HARI, TANGGAL, JAM_MASUK, JAM_PULANG, TOTAL_JAM, ISTIRAHAT, WAKTU_REAL, TOTAL_BAYAR');
+		$this->db->where('ID_USER', $username);
+		$result = $this->db->get('daftarlaporan');
+		return $result;
+	}
 }
 
 ?>

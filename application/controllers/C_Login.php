@@ -11,10 +11,12 @@ class C_Login extends CI_Controller{
 
 		if(password_verify($password, $validated)){
 			$role = $this->user->getUserItem($username, "ID_ROLE");
+			$kategori = $this->user->getUserItem($username, "ID_KATEGORI");
 			$userdata = array(
         		'username'  => $username,
         		'logged_in' => TRUE,
-        		'role' => $role
+        		'role' => $role,
+        		'kategori' => $kategori
 			);
 
 			$this->session->set_userdata($userdata);
@@ -28,6 +30,8 @@ class C_Login extends CI_Controller{
 	function logout(){
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('logged_in');
+		$this->session->unset_userdata('role');
+		$this->session->unset_userdata('kategori');
 		redirect('/');
 	}
 }
