@@ -14,22 +14,22 @@
           <body>
           <div class="container">
         <div class="jumbotron">
+            <h1 class="display-4">Sistem Pelaporan Gaji Magang</h1>
+            <p class="lead">You're logged in as : <b><?php echo $this->session->userdata('username');?></b> <small><a href="<?php echo base_url();?>logout"><button class="btn btn-outline-danger btn-sm">Keluar</button></a></small></p>
+            <hr class="my-4">
             <a href="http://localhost/magang/home"><button class="btn btn-outline-primary no-print"> < go back </button></a>
-            <b><p class="no-print">Dicek dulu yaaa. Kalau sudah klik -> <button class="btn btn-outline-dark" onclick="printcoy()">Print</button></p></b>
-            <h4>PERHITUNGAN JAM KERJA KARYAWAN MAGANG</h4>
-            <p class="lead"><b>Biro Kemahasiswaan dan Alumni </b></p>
             <hr class="my-4">
             
-            <hr class="my-4">
-            <?php foreach ($profile as $prof):?>
-              <h5><b>Nama : </b><?php echo $prof->NAMA; ?></h5>
-              <h5><b>NIK : </b><?php echo $prof->NIK; ?></h5>
-            <?php endforeach;?>
-            <h5><b>Periode : </b> 16 Maret 2018 s/d 15 April 2018</h5>
+             
+              <h5>Hasil Pencarian Untuk : </h5>
+              <h5><b>Tahun :  </b><?php echo $this->session->flashdata('info_filter_tahun');?></h5>
+              <h5><b>Periode :  </b><?php echo $this->session->flashdata('info_filter_periode');?></h5>
+              <h5><b>ID Magang :  </b><?php echo $this->session->flashdata('info_filter_magang');?></h5>
             <table class="table">
                 <thead>
                     <tr>
                     <th scope="col">#</th>
+                    <th scope="col">USERNAME</th>
                     <th scope="col">Hari</th>
                     <th scope="col">Tanggal</th>
                     <th scope="col">Masuk</th>
@@ -38,7 +38,8 @@
                     <th scope="col">Istirahat</th>
                     <th scope="col">Waktu Real</th>
                     <th scope="col">Total Rupiah</th>
-                    <th scope="col" class="no-print">Aksi</th>                    
+                    <th scope="col">Periode</th>
+                    <th scope="col">Tahun</th>                
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,7 @@
                     <?php foreach ($listlaporan as $list):?>
                     <tr>
                         <td><?php echo $iterator;?></td>
+                        <td><?php echo $list->ID_USER;?></td>
                         <td><?php echo $list->HARI;?></td>
                         <td><?php echo $list->TANGGAL;?></td>
                         <td><?php echo $list->JAM_MASUK;?></td>
@@ -57,7 +59,8 @@
                         <td><?php echo $list->ISTIRAHAT;?></td>
                         <td><?php echo $list->WAKTU_REAL;?></td>
                         <td><?php echo $list->TOTAL_BAYAR;?></td>
-                        <td><a href="<?php echo base_url()."detail"."/$list->ID";?>">Detail</a></td>
+                        <td><?php echo $list->PERIODE;?></td>
+                        <td><?php echo $list->TAHUN;?></td>
                     </tr>
                     <?php 
                     $totalWaktu+=$list->WAKTU_REAL;
@@ -67,21 +70,21 @@
             </table>
             <b><p class="no-print">Dicek dulu yaaa. Kalau sudah klik -> <button class="btn btn-outline-dark" onclick="printcoy()">Print</button></p></b>
             <br>
-            <p class="lead">Jam kerja yang dihitung :  </p>
+           <!-- <p class="lead">Jam kerja yang dihitung :  </p>
             <?php
-                foreach ($gaji as $gj):
+                //foreach ($gaji //as $gj):
                     ?>
-                    <p class="lead">TARIF GOLONGAN <?php echo $gj->KATEGORI;?> : Rp.<?php $harga=$gj->HARGA;  echo $harga;?>,- / JAM</p>
+                    <p class="lead">TARIF GOLONGAN <?php //echo $gj->KATEGORI;?> : Rp.<?php $harga//=$gj->HARGA; // echo $harga;?>,- / JAM</p>
                     <?php
-                endforeach;
+               // endforeach;
             ?>
-            <p class="lead">Jumlah Gaji : <?php echo $harga;?> * <?php echo $totalWaktu;?> JAM = Rp. <?php echo $harga * $totalWaktu;?> </p>
+            <p class="lead">Jumlah Gaji : <?php //echo $harga;?> * <?php //echo $totalWaktu;?> JAM = Rp. <?php //echo $harga * $totalWaktu;?> </p>
             <br><br>
-            <p>Bandung, <?php echo(date("d-M-Y")); ?></p>
+            <p>Bandung, <?php //echo(date("d-M-Y")); ?></p>
             <p>Mengetahui,</p>
             <br><br><br><br>
             <p><b>Matheus Setiyanto, S.Sos</b></p>
-          </div>
+          </div>-->
           <div class="card-footer text-muted">
             &copy; 2018 IT Biro Kemahasiswaan dan Alumni . Universitas Katolik Parahyangan
           </div>

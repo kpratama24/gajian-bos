@@ -22,5 +22,15 @@ class C_Homepage extends CI_Controller{
 		}
 		
 	}
+	function loadHistoriPage(){
+		if($this->session->userdata('logged_in') && $this->session->userdata('role') == 1){
+			$this->load->model('user');
+			$data['listmagang'] = $this->user->getUser()->result();
+			$this->load->view('V_Histori', $data);
+		}
+		else{
+			redirect('/');
+		}
+	}
 }
 ?>

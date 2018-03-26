@@ -17,8 +17,20 @@
             <hr class="my-4">
             <a href="http://localhost/magang/home"><button class="btn btn-outline-primary no-print"> < go back </button></a>
             <hr class="my-4">
-            <form action="<?php echo base_url();?>gajian" method="post">
-                
+            <?php foreach ($info as $list):?>
+            <h3>DETAIL LAPORAN</h3>
+            <hr class="my-4">
+            <h5><b>Hari : </b> <?php echo $list->HARI;?></h5>
+            <h5><b>Tanggal : </b> <?php echo $list->TANGGAL;?></h5>
+            <h5><b>Jam Masuk : </b> <?php echo $list->JAM_MASUK;?></h5>
+            <h5><b>Jam Pulang : </b> <?php echo $list->JAM_PULANG;?></h5>
+            <h5><b>Total Jam : </b> <?php echo $list->TOTAL_JAM;?></h5>
+            <h5><b>Istirahat : </b> <?php echo $list->ISTIRAHAT;?> </h5>
+            <?php endforeach;?>
+            <hr class="my-4">
+            <form action="<?php echo base_url();?>edit" method="post">
+                <?php $id = $this->uri->segment(2);?>
+                <input class="form-control" type="text" name="id_gaji" hidden value="<?php echo $id; ?>">
                 Hari : <select class="form-control" name="hari">
                     <option value="Senin">Senin</option>
                     <option value="Selasa">Selasa</option>
@@ -33,7 +45,13 @@
                 Pulang (Format AM/PM):<input class="form-control" type="time" name="jam_pulang" required><br>
                 Total Jam :<input class="form-control" type="text" name="total_jam" placeholder="Total Jam" required><br>
                 Istirahat : <input class="form-control" type="number" name="istirahat" placeholder="Total Istirahat" required><br>
-                <input class="btn btn-primary" type="submit" value="Submit" required>
+                <input class="btn btn-primary" type="submit" name="aksi" value="SIMPAN PERUBAHAN" required>
+                
+            </form>
+            <form action="<?php echo base_url();?>remove" method="post">
+                <?php $id = $this->uri->segment(2);?>
+                <input class="form-control" type="text" name="id_gaji" hidden value="<?php echo $id; ?>" reqired>
+                <input class="btn btn-primary" type="submit" name="aksi" value="REMOVE" required>
             </form>
             </div>
             <!-- Optional JavaScript -->
