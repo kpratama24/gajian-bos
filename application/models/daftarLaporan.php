@@ -53,7 +53,25 @@ class daftarLaporan extends CI_Model{
 		return $result;
 	}
 	function edit($id, $hari, $tanggal, $jamMasuk, $jamKeluar,$totalJam, $istirahat, $waktuReal, $totalBayar, $periode, $tahun){
-
+		$data = array(
+        	'ID_USER' => $id,
+        	'HARI' => $hari,
+        	'TANGGAL' => $tanggal,
+        	'JAM_MASUK' => $jamMasuk,
+        	'JAM_PULANG' => $jamKeluar,
+        	'TOTAL_JAM' => $totalJam,
+        	'ISTIRAHAT' => $istirahat,
+        	'WAKTU_REAL' => $waktuReal,
+        	'TOTAL_BAYAR' => $totalBayar,
+        	'PERIODE' => $periode,
+        	'TAHUN' => $tahun
+		);
+		if($this->db->update('daftarlaporan', $data)){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	function remove($id){
 		$this->db->where('id', $id);

@@ -28,7 +28,7 @@ class C_DaftarGaji extends CI_Controller{
 			$this->load->view('V_DetailGaji', $data);
 		}
 		else{
-			redirect('/');
+			redirect('/home');
 		}
 	}
 	function remove (){
@@ -40,7 +40,7 @@ class C_DaftarGaji extends CI_Controller{
 			redirect('/home');
 		}
 		else{
-			redirect('/');
+			redirect('/home');
 		}
 	}
 	function edit($id_gaji){
@@ -56,7 +56,7 @@ class C_DaftarGaji extends CI_Controller{
 			
 		}
 		else{
-			redirect('/');
+			redirect('/home');
 		}
 	}
 }

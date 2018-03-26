@@ -28,6 +28,12 @@
             <h5><b>Istirahat : </b> <?php echo $list->ISTIRAHAT;?> </h5>
             <?php endforeach;?>
             <hr class="my-4">
+            <form action="<?php echo base_url();?>remove" method="post">
+                <?php $id = $this->uri->segment(2);?>
+                <input class="form-control" type="text" name="id_gaji" hidden value="<?php echo $id; ?>" reqired>
+                <input class="btn btn-primary" type="submit" name="aksi" value="REMOVE" required>
+            </form>
+            <hr class="my-4">
             <form action="<?php echo base_url();?>edit" method="post">
                 <?php $id = $this->uri->segment(2);?>
                 <input class="form-control" type="text" name="id_gaji" hidden value="<?php echo $id; ?>">
@@ -48,11 +54,10 @@
                 <input class="btn btn-primary" type="submit" name="aksi" value="SIMPAN PERUBAHAN" required>
                 
             </form>
-            <form action="<?php echo base_url();?>remove" method="post">
-                <?php $id = $this->uri->segment(2);?>
-                <input class="form-control" type="text" name="id_gaji" hidden value="<?php echo $id; ?>" reqired>
-                <input class="btn btn-primary" type="submit" name="aksi" value="REMOVE" required>
-            </form>
+            <br>
+            <br>
+            <br>
+            
             </div>
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->

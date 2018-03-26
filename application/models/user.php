@@ -52,6 +52,15 @@ class User extends CI_Model{
 		$result = $this->db->get('user');
 		return $result;
 	}
+
+	function getGaji($id){
+		$this->db->select('*');
+     	$this->db->from('daftarlaporan');
+     	$this->db->join('user', 'daftarlaporan.ID_USER = user.USERNAME');
+     	$this->db->where('daftarlaporan.ID', $id);
+		$query = $this->db->get();
+		return $query;
+	}
 	
 }
 ?>
