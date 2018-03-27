@@ -31,6 +31,19 @@ class daftarLaporan extends CI_Model{
 		return $result;
 	}
 
+	function getDaftarRappel($username, $periode, $tahun){
+		$this->db->select('ID, HARI, TANGGAL, JAM_MASUK, JAM_PULANG, TOTAL_JAM, ISTIRAHAT, WAKTU_REAL, TOTAL_BAYAR');
+		$this->db->where('ID_USER', $username);
+		if($periode != '0'){
+			$this->db->where('PERIODE', $periode);
+		}
+		if($tahun != '0'){
+			$this->db->where('TAHUN', $tahun);
+		}
+		$result = $this->db->get('daftarlaporan');
+		return $result;
+	}
+
 	function getHistori($periode, $tahun, $magang){
 		$this->db->select('ID_USER, HARI, TANGGAL, JAM_MASUK, JAM_PULANG, TOTAL_JAM, ISTIRAHAT, WAKTU_REAL, TOTAL_BAYAR, PERIODE, TAHUN');
 		if($periode != 0){

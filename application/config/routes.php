@@ -64,4 +64,5 @@ $route['input'] = 'C_Input/index';
 $route['gajian'] = 'C_Input/inputGaji';
 $route['laporan'] = 'C_DaftarGaji/index';
 $route['remove'] = 'C_DaftarGaji/remove';
+$route['rappel'] = 'C_DaftarGaji/viewRappel';
 $route['translate_uri_dashes'] = FALSE;

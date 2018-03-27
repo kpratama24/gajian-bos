@@ -18,7 +18,11 @@ class C_Input extends CI_Controller{
 			$totalJam = $this->input->post('total_jam');
 			$istirahat = $this->input->post('istirahat');
 			$date_timestamp = strtotime($this->input->post('tanggal'));
+			$day = date("d", $date_timestamp);
 			$month = date("m", $date_timestamp);
+			if($day >=1 && $day <=15){
+				$month = $month-1;
+			}
 			$year = date("Y", $date_timestamp);
 			$periode = $month;
 			$tahun = $year;

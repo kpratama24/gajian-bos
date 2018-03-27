@@ -11,12 +11,10 @@ class C_Login extends CI_Controller{
 
 		if(password_verify($password, $validated)){
 			$role = $this->user->getUserItem($username, "ID_ROLE");
-			$kategori = $this->user->getUserItem($username, "ID_KATEGORI");
 			$userdata = array(
         		'username'  => $username,
         		'logged_in' => TRUE,
-        		'role' => $role,
-        		'kategori' => $kategori
+        		'role' => $role
 			);
 
 			$this->session->set_userdata($userdata);

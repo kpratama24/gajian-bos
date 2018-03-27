@@ -14,7 +14,9 @@ class C_DaftarGaji extends CI_Controller{
 			$data['listlaporan'] = $this->daftarLaporan->getDaftarLaporan($username)->result();
 			$data['profile'] = $this->user->getDetailUser($username)->result();
 			$data['listmagang'] = $this->user->getUser()->result();
+			$kategori = $this->user->getUserItem($username, "ID_KATEGORI");
 			$data['gaji'] = $this->kategoriGolongan->getGaji($kategori)->result();
+			$data['periode'] = 3;
 			$this->load->view('V_LaporanGaji', $data);
 		}
 		else{
@@ -57,6 +59,26 @@ class C_DaftarGaji extends CI_Controller{
 		}
 		else{
 			redirect('/home');
+		}
+	}
+	function viewRappel(){
+		if($this->session->userdata('logged_in')){
+			$this->load->model('daftarLaporan');
+			$this->load->model('user');
+			$this->load->model('kategoriGolongan');
+			$periode = $this->input->get('periode');
+			$tahun = $this->input->get('tahun');
+			$username = $this->session->userdata('username');
+			$data['listlaporan'] = $this->daftarLaporan->getDaftarRappel($username, $periode, $tahun)->result();
+			$data['profile'] = $this->user->getDetailUser($username)->result();
+			$data['listmagang'] = $this->user->getUser()->result();
+			$kategori = $this->user->getUserItem($username, "ID_KATEGORI");
+			$data['gaji'] = $this->kategoriGolongan->getGaji($kategori)->result();
+			$data['periode'] = $periode;
+			$this->load->view('V_LaporanGaji', $data);
+		}
+		else{
+			redirect('/');
 		}
 	}
 }
