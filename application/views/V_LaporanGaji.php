@@ -22,7 +22,7 @@
             <h4>PERHITUNGAN JAM KERJA KARYAWAN MAGANG</h4>
             <p class="lead"><b>Biro Kemahasiswaan dan Alumni </b></p>
             <hr class="my-4">
-            <form name="rappel-form" id="rappel-form" method="get" action="http://localhost/magang/rappel">
+            <form name="rappel-form" id="rappel-form" method="get" action="<?php echo base_url();?>rappel">
             Tahun : 
             <select id="tahun_rappel" name="tahun" class="form-control" onchange="">
                     <option value="2018">2018</option>

@@ -73,8 +73,8 @@ class C_DaftarGaji extends CI_Controller{
 			$this->load->model('user');
 			$this->load->model('kategoriGolongan');
 			$periode = $this->input->get('periode');
-			$tahun = $this->input->get('tahun');
 			$username = $this->session->userdata('username');
+			$tahun = $this->input->get('tahun');
 			$data['listlaporan'] = $this->daftarLaporan->getDaftarRappel($username, $periode, $tahun)->result();
 			$data['profile'] = $this->user->getDetailUser($username)->result();
 			$data['listmagang'] = $this->user->getUser()->result();
