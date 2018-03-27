@@ -51,7 +51,7 @@
                 Pulang (Format AM/PM):<input class="form-control" type="time" name="jam_pulang" required><br>
                 Total Jam :<input class="form-control" type="text" name="total_jam" placeholder="Total Jam" required><br>
                 Istirahat : <input class="form-control" type="number" name="istirahat" placeholder="Total Istirahat" required><br>
-                <input class="btn btn-primary" type="submit" name="aksi" value="SIMPAN PERUBAHAN" required>
+                <input class="btn btn-primary" type="submit" name="aksi" value="SIMPAN PERUBAHAN" required disabled>
                 
             </form>
             <br>

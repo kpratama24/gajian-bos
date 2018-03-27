@@ -15,12 +15,13 @@
             <h1 class="display-4">Sistem Pelaporan Gaji Magang</h1>
             <p class="lead">You're logged in as :<b><?php echo $this->session->userdata('username');?></b> <small><a href="<?php echo base_url();?>logout"><button class="btn btn-outline-danger btn-sm">Keluar</button></a></small></p>
             <hr class="my-4">
-            <a href="http://localhost/magang/home"><button class="btn btn-outline-primary no-print"> < go back </button></a>
+            <a href="<?php echo base_url();?>home"><button class="btn btn-outline-primary no-print"> < go back </button></a>
             <hr class="my-4">
             <?php foreach ($listmagang as $list):?>
               <p><b>Nama : </b><?php echo $list->NAMA; ?></p>
               <p><b>NIK : </b><?php echo $list->NIK; ?></p>
-               <hr class="my-4">
+              <a href="<?php echo base_url().'gaji/'.$list->USERNAME;?>"><button class="btn btn-outline-primary no-print"> LIHAT LAPORAN GAJI</button></a>
+              <hr class="my-4">
             <?php endforeach;?>  
           
           </div>

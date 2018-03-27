@@ -10,13 +10,19 @@ class C_DaftarGaji extends CI_Controller{
 			$kategori = $this->session->userdata('kategori');
 			$datestring = 'Year: %Y Month: %m Day: %d - %h:%i %a';
 			$time = time();
+			$hari = date("j");
+			$tahun = date("Y");
+			$bulan = date("m");
+			if($hari >= 1 && $hari <=15){
+				$bulan = $bulan - 1;
+			}
 			$data['date'] =  mdate($datestring, $time);
-			$data['listlaporan'] = $this->daftarLaporan->getDaftarLaporan($username)->result();
+			$data['listlaporan'] = $this->daftarLaporan->getDaftarLaporan($username, $bulan, $tahun)->result();
 			$data['profile'] = $this->user->getDetailUser($username)->result();
 			$data['listmagang'] = $this->user->getUser()->result();
 			$kategori = $this->user->getUserItem($username, "ID_KATEGORI");
 			$data['gaji'] = $this->kategoriGolongan->getGaji($kategori)->result();
-			$data['periode'] = 3;
+			$data['periode'] = $bulan;
 			$this->load->view('V_LaporanGaji', $data);
 		}
 		else{
@@ -79,6 +85,34 @@ class C_DaftarGaji extends CI_Controller{
 		}
 		else{
 			redirect('/');
+		}
+	}
+	function viewLaporan($username){
+		if($this->session->userdata('logged_in') && $this->session->userdata('role') == 1){
+			$this->load->helper('date');
+			$this->load->model('daftarLaporan');
+			$this->load->model('user');
+			$this->load->model('kategoriGolongan');
+			$kategori = $this->session->userdata('kategori');
+			$datestring = 'Year: %Y Month: %m Day: %d - %h:%i %a';
+			$time = time();
+			$hari = date("j");
+			$tahun = date("Y");
+			$bulan = date("m");
+			if($hari >= 1 && $hari <=15){
+				$bulan = $bulan - 1;
+			}
+			$data['date'] =  mdate($datestring, $time);
+			$data['listlaporan'] = $this->daftarLaporan->getDaftarLaporan($username, $bulan, $tahun)->result();
+			$data['profile'] = $this->user->getDetailUser($username)->result();
+			$data['listmagang'] = $this->user->getUser()->result();
+			$kategori = $this->user->getUserItem($username, "ID_KATEGORI");
+			$data['gaji'] = $this->kategoriGolongan->getGaji($kategori)->result();
+			$data['periode'] = $bulan;
+			$this->load->view('V_LaporanGaji', $data);
+		}
+		else{
+			redirect('/home');
 		}
 	}
 }

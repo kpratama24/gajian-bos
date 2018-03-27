@@ -22,11 +22,11 @@ class daftarLaporan extends CI_Model{
 			return false;
 		}
 	}
-	function getDaftarLaporan($username){
+	function getDaftarLaporan($username, $periode, $tahun){
 		$this->db->select('ID, HARI, TANGGAL, JAM_MASUK, JAM_PULANG, TOTAL_JAM, ISTIRAHAT, WAKTU_REAL, TOTAL_BAYAR');
 		$this->db->where('ID_USER', $username);
-		$this->db->where('PERIODE', '3');
-		$this->db->where('TAHUN', '2018');
+		$this->db->where('PERIODE', $periode);
+		$this->db->where('TAHUN', $tahun);
 		$result = $this->db->get('daftarlaporan');
 		return $result;
 	}
