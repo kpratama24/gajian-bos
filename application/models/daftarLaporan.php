@@ -1,8 +1,9 @@
 <?php
 class daftarLaporan extends CI_Model{
-	function simpanGaji($id, $hari, $tanggal, $jamMasuk, $jamKeluar,$totalJam, $istirahat, $waktuReal, $totalBayar, $periode, $tahun){
+	function simpanGaji($id,$id_hash, $hari, $tanggal, $jamMasuk, $jamKeluar,$totalJam, $istirahat, $waktuReal, $totalBayar, $periode, $tahun){
 		$data = array(
         	'ID_USER' => $id,
+        	'ID_GAJI_HASH'=>$id_hash,
         	'HARI' => $hari,
         	'TANGGAL' => $tanggal,
         	'JAM_MASUK' => $jamMasuk,
@@ -23,7 +24,7 @@ class daftarLaporan extends CI_Model{
 		}
 	}
 	function getDaftarLaporan($username, $periode, $tahun){
-		$this->db->select('ID, HARI, TANGGAL, JAM_MASUK, JAM_PULANG, TOTAL_JAM, ISTIRAHAT, WAKTU_REAL, TOTAL_BAYAR');
+		$this->db->select('ID,ID_GAJI_HASH, HARI, TANGGAL, JAM_MASUK, JAM_PULANG, TOTAL_JAM, ISTIRAHAT, WAKTU_REAL, TOTAL_BAYAR');
 		$this->db->where('ID_USER', $username);
 		$this->db->where('PERIODE', $periode);
 		$this->db->where('TAHUN', $tahun);
@@ -59,9 +60,9 @@ class daftarLaporan extends CI_Model{
 		return $result;
 	}
 
-	function getDetail($id){
+	function getDetail($ID_GAJI_HASH){
 		$this->db->select('HARI, TANGGAL, JAM_MASUK, JAM_PULANG, TOTAL_JAM, ISTIRAHAT');
-		$this->db->where('ID', $id);
+		$this->db->where('ID_GAJI_HASH', $ID_GAJI_HASH);
 		$result = $this->db->get('daftarlaporan');
 		return $result;
 	}
@@ -86,8 +87,8 @@ class daftarLaporan extends CI_Model{
 			return false;
 		}
 	}
-	function remove($id){
-		$this->db->where('id', $id);
+	function remove($ID_GAJI_HASH){
+		$this->db->where('ID_GAJI_HASH', $ID_GAJI_HASH);
  		$this->db->delete('daftarlaporan');
 	}
 }

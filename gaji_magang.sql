@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2018 at 09:27 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Mar 28, 2018 at 07:27 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,6 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `daftarlaporan` (
   `ID` int(10) NOT NULL,
+  `ID_GAJI_HASH` varchar(20) NOT NULL,
   `ID_USER` varchar(64) NOT NULL,
   `HARI` varchar(100) NOT NULL,
   `TANGGAL` date NOT NULL,
@@ -40,14 +43,6 @@ CREATE TABLE `daftarlaporan` (
   `PERIODE` int(2) NOT NULL,
   `TAHUN` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `daftarlaporan`
---
-
-INSERT INTO `daftarlaporan` (`ID`, `ID_USER`, `HARI`, `TANGGAL`, `JAM_MASUK`, `JAM_PULANG`, `TOTAL_JAM`, `ISTIRAHAT`, `WAKTU_REAL`, `TOTAL_BAYAR`, `PERIODE`, `TAHUN`) VALUES
-(1, 'henggkyy@gmail.com', 'Senin', '2018-03-27', '10:10:00', '12:12:00', 2, 0, 2, 18000, 3, 2018),
-(2, 'test@test.com', 'Senin', '2018-03-27', '10:10:00', '15:15:00', 3, 0, 3, 0, 3, 2018);
 
 -- --------------------------------------------------------
 
@@ -152,7 +147,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `daftarlaporan`
 --
 ALTER TABLE `daftarlaporan`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `kategorimagang`
 --
@@ -179,6 +174,7 @@ ALTER TABLE `daftarlaporan`
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`ID_KATEGORI`) REFERENCES `kategorimagang` (`ID`),
   ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`ID_ROLE`) REFERENCES `user_role` (`ID`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

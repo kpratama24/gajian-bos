@@ -142,7 +142,7 @@
                         <td><?php echo $list->ISTIRAHAT;?></td>
                         <td><?php echo $list->WAKTU_REAL;?></td>
                         <td><?php echo $list->TOTAL_BAYAR;?></td>
-                        <td><a href="<?php echo base_url()."detail"."/$list->ID";?>">Detail</a></td>
+                        <td><a href="<?php echo base_url()."detail"."/$list->ID_GAJI_HASH";?>">Detail</a></td>
                     </tr>
                     <?php 
                     $totalWaktu+=$list->WAKTU_REAL;

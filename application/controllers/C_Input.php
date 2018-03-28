@@ -17,6 +17,7 @@ class C_Input extends CI_Controller{
 			$jamKeluar = $this->input->post('jam_pulang');
 			$totalJam = $this->input->post('total_jam');
 			$istirahat = $this->input->post('istirahat');
+			$id_hash = $this->randomHash();
 			$date_timestamp = strtotime($this->input->post('tanggal'));
 			$day = date("d", $date_timestamp);
 			$month = date("m", $date_timestamp);
@@ -36,7 +37,7 @@ class C_Input extends CI_Controller{
 			$totalBayar = $waktuReal * $harga;
 			
 			$this->load->model('daftarLaporan');
-			$succed = $this->daftarLaporan->simpanGaji($id, $hari, $tanggal, $jamMasuk, $jamKeluar, $totalJam, $istirahat, $waktuReal, $totalBayar, $periode, $tahun);
+			$succed = $this->daftarLaporan->simpanGaji($id, $id_hash, $hari, $tanggal, $jamMasuk, $jamKeluar, $totalJam, $istirahat, $waktuReal, $totalBayar, $periode, $tahun);
 			if($succed){
 				$this->session->set_flashdata('error_input', "Input Gaji Anda tanggal $tanggal berhasil disimpan.");
 				redirect('/input');
@@ -49,6 +50,15 @@ class C_Input extends CI_Controller{
 		else{
 			redirect('/');
 		}
+	}
+	function randomHash(){
+		$characters = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMOPQRSTUVWXYZ';
+		$string = '';
+ 		$max = strlen($characters) - 1;
+ 		for ($i = 0; $i < 20; $i++) {
+      		$string .= $characters[mt_rand(0, $max)];
+ 		}
+ 		return $string;
 	}
 }
 ?>
